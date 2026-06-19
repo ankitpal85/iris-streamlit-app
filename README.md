@@ -128,7 +128,7 @@ Through this project, I practiced:
 
 ## Author
 
-**Ankit Pal**
+**Ankit Kumar  Pal**
 
 GitHub: [ankitpal85](https://github.com/ankitpal85)
 
