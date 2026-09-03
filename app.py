@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
+import sklearn
 
 st.set_page_config(
     page_title="Iris Predictor",
@@ -11,19 +12,41 @@ st.set_page_config(
 st.markdown(
     """
     <style>
+    /* Hide top header bar & footer */
+    header[data-testid="stHeader"] {
+        display: none !important;
+    }
+    #MainMenu {
+        visibility: hidden !important;
+    }
+    footer {
+        visibility: hidden !important;
+    }
+
     .stApp {
-        background: #ffffff;
-        color: #17202a;
+        background: #ffffff !important;
+        color: #17202a !important;
     }
 
     .main .block-container {
         max-width: 860px;
-        padding-top: 2rem;
+        padding-top: 1.5rem;
         padding-bottom: 2rem;
     }
 
     h1, h2, h3, p, label, span {
         letter-spacing: 0;
+        color: #17202a;
+    }
+
+    /* Ensure slider labels and values are clearly visible in light mode */
+    div[data-testid="stWidgetLabel"] label,
+    div[data-testid="stWidgetLabel"] p,
+    .stSlider label,
+    .stSlider p,
+    .stSlider span {
+        color: #17202a !important;
+        font-weight: 600 !important;
     }
 
     .hero {
